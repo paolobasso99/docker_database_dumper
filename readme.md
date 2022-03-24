@@ -71,19 +71,19 @@ networks:
 ```
 
 ### Environment Variables
-| Variable                | Description                                                                                | Default     |
-| ----------------------- | ------------------------------------------------------------------------------------------ | ----------- |
-| PUID                    | The UserID of the user who will own the dumps.                                             |             |
-| PGID                    | The GroupID of the user who will own the dumps.                                            |             |
-| DUMPER_TYPE             | The type of the database. Can be: `mysql` or `postgres`.                                   |             |
-| DUMPER_DATABASE         | The name of the database to dump.                                                          |             |
-| DUMPER_HOST             | Database connection parameter; host to connect to.                                         |             |
-| DUMPER_PASSWORD         | Database connection parameter; password to connect with.                                   |             |
-| DUMPER_PORT             | Database connection parameter; port to connect to.                                         | `3306`      | `5432` |
-| DUMPER_USER             | Database connection parameter; user to connect with.                                       |             |
-| DUMPER_SCHEDULE         | [Cron-schedule](https://en.wikipedia.org/wiki/Cron) specifying the interval between dumps. | `0 3 * * *` |
-| DUMPER_KEEP             | The number of dumps to keep.                                                               | `7`         |
-| DUMPER_HEALTHCHECKS_URL | The url to an [healthchecks.io](https://healthchecks.io/) application.                     |             |
+| Variable                | Description                                                                                | Default          |
+| ----------------------- | ------------------------------------------------------------------------------------------ | ---------------- |
+| PUID                    | The UserID of the user who will own the dumps.                                             |                  |
+| PGID                    | The GroupID of the user who will own the dumps.                                            |                  |
+| DUMPER_TYPE             | The type of the database. Can be: `mysql` or `postgres`.                                   |                  |
+| DUMPER_DATABASE         | The name of the database to dump.                                                          |                  |
+| DUMPER_HOST             | Database connection parameter; host to connect to.                                         |                  |
+| DUMPER_PASSWORD         | Database connection parameter; password to connect with.                                   |                  |
+| DUMPER_PORT             | Database connection parameter; port to connect to.                                         | `3306` or `5432` |
+| DUMPER_USER             | Database connection parameter; user to connect with.                                       |                  |
+| DUMPER_SCHEDULE         | [Cron-schedule](https://en.wikipedia.org/wiki/Cron) specifying the interval between dumps. | `0 3 * * *`      |
+| DUMPER_KEEP             | The number of dumps to keep.                                                               | `7`              |
+| DUMPER_HEALTHCHECKS_URL | The url to an [healthchecks.io](https://healthchecks.io/) application.                     |                  |
 
 ### User / Group Identifiers
 To find the correct values of `PUID` and `PGID` use `id user` as below:
