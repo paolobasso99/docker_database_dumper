@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:14
+    restart: unless-stopped
+    container_name: postgres_db
+    volumes:
+      - ./postgres/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=mydatabase
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=${DUMPER_PASSWORD}
+    networks:
+      - db
+
+  database_dumper_postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    #command: tail -f /dev/null
+    #command: /dump.sh
+    depends_on:
+      - postgres_db
+    container_name: database_dumper_postgres
+    volumes:
+      - ./postgres/dumps:/dumps
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - DUMPER_TYPE=postgres
+      - DUMPER_DATABASE=mydatabase
+      - DUMPER_HOST=postgres_db
+      - DUMPER_USER=myuser
+      - DUMPER_PASSWORD=${DUMPER_PASSWORD}
+      - DUMPER_KEEP=2
+      - DUMPER_SCHEDULE=* * * * *
+#      - DUMPER_HEALTHCHECKS_URL=${BACKUP_HEALTHCHECKS_URL}
+    networks:
+      - db
+
+networks:
+  db:
+    driver: bridge
