@@ -75,7 +75,7 @@ networks:
 | ----------------------- | ------------------------------------------------------------------------------------------ | ----------- |
 | PUID                    | The UserID of the user who will own the dumps.                                             |             |
 | PGID                    | The GroupID of the user who will own the dumps.                                            |             |
-| DUMPER_TYPE             | The type of the database. Can be: `mysql` or `postgres`                                    |             |
+| DUMPER_TYPE             | The type of the database. Can be: `mysql` or `postgres`.                                   |             |
 | DUMPER_DATABASE         | The name of the database to dump.                                                          |             |
 | DUMPER_HOST             | Database connection parameter; host to connect to.                                         |             |
 | DUMPER_PASSWORD         | Database connection parameter; password to connect with.                                   |             |
