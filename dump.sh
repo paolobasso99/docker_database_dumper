@@ -1,7 +1,7 @@
 #!/bin/sh
 
 function start_healthcheck {
-    if [ "${DUMPER_HEALTHCHECKS_URL}" != "**None**" ] && [[ ! -z "${DUMPER_HEALTHCHECKS_URL}" ]]; then
+    if [ "${DUMPER_HEALTHCHECKS_URL}" != "**None**" ] && [ -z "${DUMPER_HEALTHCHECKS_URL}" ]; then
         echo "Sending start health check to ${DUMPER_HEALTHCHECKS_URL}"
         wget --quiet --spider --timeout=2 --tries=10 ${DUMPER_HEALTHCHECKS_URL}/start
 
@@ -14,14 +14,14 @@ function start_healthcheck {
 }
 
 function stop_healthcheck {
-    if [ "${DUMPER_HEALTHCHECKS_URL}" != "**None**" ] && [[ ! -z "${DUMPER_HEALTHCHECKS_URL}" ]]; then
+    if [ "${DUMPER_HEALTHCHECKS_URL}" != "**None**" ] && [ -z "${DUMPER_HEALTHCHECKS_URL}" ]; then
         echo "Sending stop health check to ${DUMPER_HEALTHCHECKS_URL}"
         wget --quiet --spider --timeout=2 --tries=10 ${DUMPER_HEALTHCHECKS_URL}
     fi
 }
 
 function fail_healthcheck {
-    if [ "${DUMPER_HEALTHCHECKS_URL}" != "**None**" ] && [[ ! -z "${DUMPER_HEALTHCHECKS_URL}" ]]; then
+    if [ "${DUMPER_HEALTHCHECKS_URL}" != "**None**" ] && [ -z "${DUMPER_HEALTHCHECKS_URL}" ]; then
         echo "Sending fail health check to ${DUMPER_HEALTHCHECKS_URL}"
         wget --quiet --spider --timeout=2 --tries=10 ${DUMPER_HEALTHCHECKS_URL}/fail
     fi
