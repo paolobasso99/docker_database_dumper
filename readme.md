@@ -83,7 +83,7 @@ networks:
 | DUMPER_USER             | Database connection parameter; user to connect with.                                       |                  |
 | DUMPER_SCHEDULE         | [Cron-schedule](https://en.wikipedia.org/wiki/Cron) specifying the interval between dumps. | `0 3 * * *`      |
 | DUMPER_KEEP             | The number of dumps to keep.                                                               | `7`              |
-| DUMPER_HEALTHCHECKS_URL | The url to an [healthchecks.io](https://healthchecks.io/) application.                     |                  |
+| DUMPER_HEALTHCHECKS_URL | The url to an [healthchecks.io](https://healthchecks.io/) endpoint.                     |                  |
 
 ### User / Group Identifiers
 To find the correct values of `PUID` and `PGID` use `id user` as below:
@@ -96,7 +96,7 @@ $ id username
 If you want to use [healthchecks.io](https://healthchecks.io/) in order to be informed if the dump fails you need to set the environment variable `DUMPER_HEALTHCHECKS_URL`.
 
 ### Making a dump instantly
-Run a one of dump:
+Run a one off dump:
 ```sh
 docker run -e DUMPER_TYPE=mysql DUMPER_HOST=db_container -e DUMPER_PORT=5432 -e DUMPER_DATABASE=db_name
 -e DUMPER_USER=user -e DUMPER_PASSWORD=password 
