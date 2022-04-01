@@ -28,7 +28,7 @@ if [ "${DUMPER_TYPE}" = "mysql" ]; then
 fi
 
 # Add job to crontab
-echo "$DUMPER_SCHEDULE /dump.sh > /proc/1/fd/1 2>/proc/1/fd/2" >>/etc/crontabs/root
+echo "$DUMPER_SCHEDULE /dump.sh > /proc/1/fd/1 2>/proc/1/fd/2" >/etc/crontabs/root
 code=$?
 if [ $code -ne 0 ]; then
     echo "Adding the job to crontab failed (exit status $code), check for errors in the log."
