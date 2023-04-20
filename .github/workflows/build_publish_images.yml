@@ -1,5 +1,5 @@
 ---
-name: 'build images'
+name: "build images"
 
 on:
   push:
@@ -8,12 +8,14 @@ on:
     #branches-ignore:
     #  - '**'
     paths-ignore:
-      - '**.md'
-      - 'docker-compose.dev.yml'
-      - '.env.example'
-      - '.gitignore'
-      - 'LICENSE'
-      - '.github/workflows/update_dockerhub_readme.yml'
+      - "**.md"
+      - "docker-compose.dev.yml"
+      - ".env.example"
+      - ".gitignore"
+      - "LICENSE"
+      - ".github/workflows/update_dockerhub_readme.yml"
+  schedule:
+    - cron: "0 0 * * SAT"
   workflow_dispatch:
 
 jobs:
