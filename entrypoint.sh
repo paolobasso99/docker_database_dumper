@@ -9,10 +9,6 @@ if [ "${PGID}" = "**None**" ] || [ -z "${PGID}" ]; then
     echo "You need to set the PGID environment variable."
     exit 1
 fi
-if [ "${DUMPER_TYPE}" != "mysql" ] && [ "${DUMPER_TYPE}" != "postgres" ]; then
-    echo "You need to set the DUMPER_TYPE environment variable to 'mysql' or 'postgres'."
-    exit 1
-fi
 if [ -z "${DUMPER_SCHEDULE}" ]; then
     echo "${DUMPER_SCHEDULE}"
     echo "You need to set the DUMPER_SCHEDULE environment variable."
