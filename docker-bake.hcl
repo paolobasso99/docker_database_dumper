@@ -1,5 +1,5 @@
 group "default" {
-	targets = ["mariadb", "mysql", "postgres-15", "postgres-14", "postgres-13", "postgres-12"]
+	targets = ["mariadb", "mysql", "postgres-16", "postgres-15", "postgres-14", "postgres-13", "postgres-12"]
 }
 
 group "postgres" {
