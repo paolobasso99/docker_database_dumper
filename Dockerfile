@@ -29,6 +29,9 @@ CMD [ "/entrypoint.sh" ]
 FROM base as postgres-base
 ENV DUMPER_TYPE="postgres"
 
+FROM postgres-base AS postgres-16
+RUN apk add --no-cache --update postgresql16-client
+
 FROM postgres-base AS postgres-15
 RUN apk add --no-cache --update postgresql15-client
 

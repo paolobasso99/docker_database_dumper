@@ -12,6 +12,7 @@ Links:
 - `mariadb` for a MariaDB database
 - `mysql` for a MySQL database
 - For postgres use the correct version:
+  - `postgres-16` for PostgreSQL 16
   - `postgres-15` for PostgreSQL 15
   - `postgres-14` for PostgreSQL 14
   - `postgres-13` for PostgreSQL 13

@@ -3,7 +3,7 @@ group "default" {
 }
 
 group "postgres" {
-	targets = ["postgres-15", "postgres-14", "postgres-13", "postgres-12"]
+	targets = ["postgres-16", "postgres-15", "postgres-14", "postgres-13", "postgres-12"]
 }
 
 target "common" {
@@ -23,6 +23,14 @@ target "mysql" {
 	target = "mysql"
 	tags = [
 		"paolobasso/database_dumper:mysql",
+	]
+}
+
+target "postgres-16" {
+	inherits = ["common"]
+	target = "postgres-16"
+	tags = [
+		"paolobasso/database_dumper:postgres-16",
 	]
 }
 
